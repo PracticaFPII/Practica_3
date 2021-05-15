@@ -17,6 +17,7 @@ int main()
 	/* Declaracion de variables */
 	int opcion = 0;
 	bool salir = false; /* Booleano para salir del programa principal, y repetir el menu */
+	int vector[MAX_TABLA]; /* Tabla cargada con la que se trabaja */
 
 	/* Bucle del Menu y los procedimientos */
 	while (!salir)
@@ -36,7 +37,7 @@ int main()
 			printf (" Escribe tu eleccion (el numero entre corchetes): ");
 			scanf("%d", &opcion);
 			printf("\n ------------------------------------\n\n");
-		} while (opcion < 0 || opcion > 7);
+		} while (opcion < 0 || opcion > 6);
 		
         /* Realizamos las opciones */
 		switch (opcion)
@@ -49,32 +50,32 @@ int main()
 				
 			
 			case 1: /** Crear vector de contenido aleatorio **/
-                crear_vector();
+                crear_vector(vector);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 2: /** Ordenar por seleccion **/
-                orden_seleccion();
+                orden_seleccion(vector);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 3: /** Ordenar por burbuja **/
-				orden_burbuja();
+				orden_burbuja(vector);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 4: /** Ordenar por insercion **/
-				orden_insercion();
+				orden_insercion(vector);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 5: /** Ver contenido del vector **/
-				ver_vector();
+				ver_vector(vector);
                 printf("\n ------------------------------------\n");
 				break;
 
 			case 6: /** Busqueda dicotomica **/
-				busqueda_dicotomica();
+				busqueda_dicotomica(vector);
                 printf("\n ------------------------------------\n");
 				break;
 		}
