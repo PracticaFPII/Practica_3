@@ -33,7 +33,7 @@ int orden_seleccion(int vector[], int n_columnas)
 {
     int i, contador = 0;
 
-    if(n_columnas > 1) //
+    if(n_columnas > 1) // Cunado solo hay un valor, la tabla ya esta ordenada
     {
 
     }

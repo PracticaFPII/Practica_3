@@ -10,8 +10,9 @@
 #define MAX_TABLA 100000 // el tamaño maximo es de 100 000
 
 /** =========================    FUNCIONES   ================================ **/
-
+int aleatorio_entre (int min, int max); // genera numeros aleatorios entre un minimo y maximo
 void crear_vector(int vector[], int *n_columnas); // CREAR VECTOR
+void ver_vector(int vector[], int n_columnas); // parte 1
 
 
 void intercambio(int *a, int *b); // Usada para intercambiar el contenido de dos variables (o posicion en vector) de enteros
@@ -21,6 +22,6 @@ int orden_seleccion(int vector[], int n_columnas); //parte 1
 int orden_burbuja(int vector[], int n_columnas); // parte 1
 int orden_insercion(int vector[], int n_columnas); // parte 1
 
-void ver_vector(int vector[], int n_columnas); // parte 1
+
 
 void busqueda_dicotomica(int vector[], int n_columnas); // parte 2

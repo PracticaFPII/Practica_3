@@ -30,7 +30,15 @@ void crear_vector(int vector[], int *n_columnas) {
     
 
     for (int i = 0; i < n_columnas; i++) {
-		vector[i] =  aleatorio_entre(MIN, MAX);
+		vector[i] = aleatorio_entre(MIN, MAX);
     }
+}
 
+void ver_vector(int vector[], int n_columnas) {
+    int cont, i = 0;
+    
+    while (i < n_columnas) {
+        printf("[%d] - %d\n", i, vector[i]);
+        i++;
+    }
 }
