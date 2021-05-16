@@ -26,4 +26,5 @@ void crear_vector(int vector[], int *n_columnas) {
     for (int i = 0; i < MAX_TABLA; i++) {
 		vector[i] =  aleatorio_entre(minimo, maximo);
     }
+    
 }
