@@ -12,11 +12,10 @@
 /** =========================    FUNCIONES   ================================ **/
 
 void crear_vector(int vector[], int *n_columnas); // CREAR VECTOR
-void vector_aleatorio(int vector[], int *n_columnas); // parte 1
-void vector_ordenado(int vector[], int *n_columnas); // parte 2 (adicional)
 
 
 void intercambio(int *a, int *b); // Usada para intercambiar el contenido de dos variables (o posicion en vector) de enteros
+void insertar(int vector[], int index_insertado, int index_a_desplazar); // Inserta un numero del vector en una posicion menor del vector y desplaza el resto
 
 int orden_seleccion(int vector[], int n_columnas); //parte 1
 int orden_burbuja(int vector[], int n_columnas); // parte 1

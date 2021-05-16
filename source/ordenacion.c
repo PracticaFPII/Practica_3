@@ -4,7 +4,7 @@
 /* Incluimos el fichero de las cabezeras de los procedimientos */
 #include "../include/headers.h"
 
-// Función que intercambia dos posiciones de la tabla
+/**  Función que intercambia dos posiciones de la tabla **/
 void intercambio(int *a, int *b){
     int aux;
 
@@ -13,7 +13,7 @@ void intercambio(int *a, int *b){
     *b = aux;
 }
 
-// Funcion que inserta un numero del vector en una posicion menor del vector y desplaza el resto
+/** Funcion que inserta un numero del vector en una posicion menor del vector y desplaza el resto **/
 void insertar(int vector[], int index_insertado, int index_a_desplazar)
 {
     int n = index_insertado; 

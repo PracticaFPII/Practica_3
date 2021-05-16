@@ -5,8 +5,8 @@
 /* Incluimos el fichero de las cabezeras de los procedimientos */
 #include "../include/headers.h"
 
-#define M 20
-#define MIN 0
+#define //MIN 
+#define //MAX 
 
 /*
 Un procediment que creï un vector d’enters de mida N i contingut aleatori. Per simplicitat, es
@@ -24,7 +24,7 @@ void crear_vector(int vector[], int *n_columnas) {
     srand((unsigned int)time(NULL));
     
     for (int i = 0; i < MAX_TABLA; i++) {
-		vector[i] =  aleatorio_entre(minimo, maximo);
+		vector[i] =  aleatorio_entre(MIN, MAX);
     }
-    
+
 }
