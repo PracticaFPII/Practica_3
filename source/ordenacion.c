@@ -31,6 +31,8 @@ void insertar(int vector[], int index_insertado, int index_a_desplazar)
 /* PROCEDIMIENTO PARA ORDENAR POR SELECCIÓN */
 int orden_seleccion(int vector[], int n_columnas)
 {
+    int i, contador = 0;
+
 
 }
 
@@ -50,8 +52,7 @@ int orden_burbuja(int vector[], int n_columnas)
                 intercambio(vector[i], vector[i+1]); 
                 contador++;
             }
-            i++;
-            
+            i++; 
         }
 
         n_columnas--; // Disminuimos las columnas a ordenar

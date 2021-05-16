@@ -23,7 +23,13 @@ void crear_vector(int vector[], int *n_columnas) {
 
     srand((unsigned int)time(NULL));
     
-    for (int i = 0; i < MAX_TABLA; i++) {
+    do{
+        printf("Indica el largo de la tabla (tiene que ser entre 1 y 100000): ");
+        scanf("%d", n_columnas);
+    } while(n_columnas <= 0 && n_columnas > MAX_TABLA);
+    
+
+    for (int i = 0; i < n_columnas; i++) {
 		vector[i] =  aleatorio_entre(MIN, MAX);
     }
 

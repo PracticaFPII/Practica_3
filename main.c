@@ -30,7 +30,7 @@ int main()
             printf(" [2] - Ordenar por seleccion\n");
             printf(" [3] - Ordenar por burbuja\n");
             printf(" [4] - Ordenar por insercion\n");
-            printf(" [5] - Ver contenido del vector (si es pequeño)\n");
+            printf(" [5] - Ver contenido del vector \n");
             printf(" [6] - Busqueda dicotomica (vector ordenado no recursiva)\n");
 			printf(" [0] - Salir\n\n");
 
