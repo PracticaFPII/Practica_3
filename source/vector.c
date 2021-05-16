@@ -7,6 +7,7 @@
 
 #define //MIN 
 #define //MAX 
+#define MAX_MOSTRAR 100
 
 /*
 Un procediment que creï un vector d’enters de mida N i contingut aleatori. Per simplicitat, es
@@ -37,8 +38,10 @@ void crear_vector(int vector[], int *n_columnas) {
 void ver_vector(int vector[], int n_columnas) {
     int cont, i = 0;
     
-    while (i < n_columnas) {
-        printf("[%d] - %d\n", i, vector[i]);
-        i++;
+    if (n_columnas < MAX_MOSTRAR) {
+        while (i < n_columnas) {
+            printf("[%d] - %d\n", i, vector[i]);
+            i++;
+        }
     }
 }

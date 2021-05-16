@@ -26,12 +26,11 @@ int main()
 		do
 		{
 			printf("\n MENU:\n");
-			printf(" [1] - Crear vector de contenido aleatorio\n");
-            printf(" [2] - Ordenar por seleccion\n");
-            printf(" [3] - Ordenar por burbuja\n");
-            printf(" [4] - Ordenar por insercion\n");
-            printf(" [5] - Ver contenido del vector \n");
-            printf(" [6] - Busqueda dicotomica (vector ordenado no recursiva)\n");
+            printf(" [1] - Ordenar por seleccion\n");
+            printf(" [2] - Ordenar por burbuja\n");
+            printf(" [3] - Ordenar por insercion\n");
+            printf(" [4] - Busqueda dicotomica\n");
+			printf(" [5] - Medir coste de los procesos de ordenacion\n");
 			printf(" [0] - Salir\n\n");
 
 			printf (" Escribe tu eleccion (el numero entre corchetes): ");
@@ -49,33 +48,52 @@ int main()
 				break;
 				
 			
-			case 1: /** Crear vector de contenido aleatorio **/
-                crear_vector(vector, &num_columnas);
-                printf("\n ------------------------------------\n");
-				break;
-			
-			case 2: /** Ordenar por seleccion **/
-                contador = orden_seleccion(vector, num_columnas);
-                printf("\n ------------------------------------\n");
-				break;
-			
-			case 3: /** Ordenar por burbuja **/
-				contador = orden_burbuja(vector, num_columnas);
-                printf("\n ------------------------------------\n");
-				break;
-			
-			case 4: /** Ordenar por insercion **/
-				contador = orden_insercion(vector, num_columnas);
-                printf("\n ------------------------------------\n");
-				break;
-			
-			case 5: /** Ver contenido del vector **/
+			case 1: /** Ordenar por seleccion **/
+				crear_vector(vector, &num_columnas);
 				ver_vector(vector, num_columnas);
+
+                contador = orden_seleccion(vector, num_columnas);
+
+				ver_vector(vector, num_columnas);
+				printf(" Se han realizado %d intercambios\n", num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
+			
+			case 2: /** Ordenar por burbuja **/
+				crear_vector(vector, &num_columnas);
+				ver_vector(vector, num_columnas);
 
-			case 6: /** Busqueda dicotomica **/
+                contador = orden_burbuja(vector, num_columnas);
+
+				ver_vector(vector, num_columnas);
+				printf(" Se han realizado %d intercambios\n", num_columnas);
+                printf("\n ------------------------------------\n");
+				break;
+			
+			case 3: /** Ordenar por insercion **/
+				crear_vector(vector, &num_columnas);
+				ver_vector(vector, num_columnas);
+
+				contador = orden_insercion(vector, num_columnas);
+
+				ver_vector(vector, num_columnas);
+				printf(" Se han realizado %d intercambios\n", num_columnas);
+                printf("\n ------------------------------------\n");
+				break;
+			
+			case 4: /** Ver contenido del vector **/
+				crear_vector(vector, &num_columnas);
+				ordenar_seleccion(vector, num_columnas);
+
 				busqueda_dicotomica(vector, num_columnas);
+
+				ver_vector(vector, num_columnas);
+				printf(" Se han realizado %d intercambios\n", num_columnas);
+                printf("\n ------------------------------------\n");
+				break;
+			
+			case 5: 
+				test_ordenacion(vector, &num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 		}

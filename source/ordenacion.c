@@ -21,7 +21,7 @@ void insertar(int vector[], int index_insertado, int index_a_desplazar)
     
     while (n > index_a_desplazar)
     {
-        intercambio(vector[n], vector[n-1]);
+        intercambio(&(vector[n]), &(vector[n-1]));
         n--;
     }
 }
@@ -31,13 +31,25 @@ void insertar(int vector[], int index_insertado, int index_a_desplazar)
 /* PROCEDIMIENTO PARA ORDENAR POR SELECCIÓN */
 int orden_seleccion(int vector[], int n_columnas)
 {
-    int i, contador = 0;
+    int i, j, index_min, contador = 0;
 
     if(n_columnas > 1) // Cunado solo hay un valor, la tabla ya esta ordenada
     {
-
+        while(j < n_columnas) /* Se va avanzando en la tabla ya ordenada */
+        {
+            while (i < n_columnas) /* Se va avanzando en la tabla NO ordenada */
+            {
+                if (vector[i] < vector[index_min]) /* Comprueba que valor es mas pequeño */
+                {
+                    index_min = i; /* Guarda la posicion del nuevo valor mas pequeño */
+                }
+                i++;
+            }
+            intercambio( &(vector[index_min]), &(vector[j]) );
+            contador++;
+            j++;
+        }
     }
-
 }
 
 
@@ -53,7 +65,7 @@ int orden_burbuja(int vector[], int n_columnas)
         i = 0;
         while (i < n_columnas){
             if(vector[i] > vector[i+1]){ // Realizamos el intercambio si no estan ordenados los dos contiguos
-                intercambio(vector[i], vector[i+1]); 
+                intercambio( &(vector[i]), &(vector[i+1]) ); 
                 contador++;
             }
             i++; 
