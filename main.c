@@ -17,7 +17,7 @@ int main()
 	/* Declaracion de variables */
 	int opcion = 0;
 	bool salir = false; /* Booleano para salir del programa principal, y repetir el menu */
-	int vector[MAX_TABLA]; /* Tabla cargada con la que se trabaja */
+	int vector[MAX_TABLA], num_columnas, contador; /* Tabla cargada con la que se trabaja */
 
 	/* Bucle del Menu y los procedimientos */
 	while (!salir)
@@ -50,32 +50,32 @@ int main()
 				
 			
 			case 1: /** Crear vector de contenido aleatorio **/
-                crear_vector(vector);
+                crear_vector(vector, &num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 2: /** Ordenar por seleccion **/
-                orden_seleccion(vector);
+                contador = orden_seleccion(vector, num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 3: /** Ordenar por burbuja **/
-				orden_burbuja(vector);
+				contador = orden_burbuja(vector, num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 4: /** Ordenar por insercion **/
-				orden_insercion(vector);
+				contador = orden_insercion(vector, num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 5: /** Ver contenido del vector **/
-				ver_vector(vector);
+				ver_vector(vector, num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 
 			case 6: /** Busqueda dicotomica **/
-				busqueda_dicotomica(vector);
+				busqueda_dicotomica(vector, num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 		}

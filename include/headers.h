@@ -11,13 +11,17 @@
 
 /** =========================    FUNCIONES   ================================ **/
 
-void crear_vector(); // CREAR VECTOR
-void vector_aleatorio(); // parte 1
-void vector_ordenado(); // parte 2 (adicional)
+void crear_vector(int vector[], int *n_columnas); // CREAR VECTOR
+void vector_aleatorio(int vector[], int *n_columnas); // parte 1
+void vector_ordenado(int vector[], int *n_columnas); // parte 2 (adicional)
 
-void orden_seleccion(); //parte 1
-void orden_burbuja(); // parte 1
-void orden_insercion(); // parte 1
-void ver_vector(); // parte 1
 
-void busqueda_dicotomica(); // parte 2
+void intercambio(int *a, int *b); // Usada para intercambiar el contenido de dos variables (o posicion en vector) de enteros
+
+int orden_seleccion(int vector[], int n_columnas); //parte 1
+int orden_burbuja(int vector[], int n_columnas); // parte 1
+int orden_insercion(int vector[], int n_columnas); // parte 1
+
+void ver_vector(int vector[], int n_columnas); // parte 1
+
+void busqueda_dicotomica(int vector[], int n_columnas); // parte 2
