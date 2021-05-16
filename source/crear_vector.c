@@ -14,7 +14,7 @@ recomana que utilitzeu vectors estàtics, amb una mida màxima de 100000 element
 aquest valor perquè farem proves amb vectors petits i grans. 
 */
 
-int aleatorio_entre (int min, int max) /* Es una función que wscoge un numero aleatorio de entre un minimo y maximo*/
+int aleatorio_entre (int min, int max) /* Es una función que escoge un numero aleatorio de entre un minimo y maximo*/
 {
     return (min + (rand()%(max-min+1))); 
 }

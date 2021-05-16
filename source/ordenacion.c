@@ -66,24 +66,26 @@ int orden_insercion(int vector[], int n_columnas)
 {
     int i = 1, n, contador = 0;
 
-    if(vector[1] > vector[0]){ // Realizamos el intercambio si no estan ordenados los dos contiguos
-        intercambio(vector[i], vector[i+1]); 
-        contador++;
-    }
-    i++;
-    
-    while (i < n_columnas){
-        n = 1;
-        while (n < i){
-            if(vector[i] < vector[i-n] && vector[i] > vector[i-n-1]){ // Realizamos el intercambio si no estan ordenados 
-                insertar(vector, i, i-n);
-                contador++;
-            }
-            n++;
-        }
-        i++;
-    }
+    if (n_columnas > 1) // Si solo hay uno ya esta ordenado
+    {
+        
+        while (i < n_columnas){ // Hacemos un recorrido comparando para saber donde insertarlo
 
+            n = 1;
+            while (n <= i) 
+            {
+                // Comparamos el numero a insertar con las posiciones anteriores
+                if( (i == n && vector[i] < vector [0]) || (vector[i] < vector[i-n] && vector[i] > vector[i-n-1]) ) 
+                { 
+                    insertar(vector, i, i-n);
+                    contador++;
+                }
+                n++;
+            }
+            i++;
+
+        }
+    }
     return contador;
 }
 
