@@ -11,16 +11,19 @@ void busqueda_dicotomica (int vector[], int n_columnas) {
     printf(" Introduzca el numero a buscar: ");
     scanf("%d", &num_buscado);
 
-    posicion = busqueda_ite (vector, n_columnas);
+    posicion = busqueda_ite (vector, n_columnas,num_buscado);
 }
 
-int busqueda_ite (int vector[], int n_columnas) {
+int busqueda_ite (int vector[], int n_columnas, int num_buscado) {
     int i;
+    int pos_inicial = 0;
+    int pos_final = -1;
+    i = (n_columnas-1)/2; // Buscar el medio
 
-    while (i < n_columnas) {
-
-        i = (n_columnas-1)/2; // Buscar el medio
-
+    while ((pos_inicial < pos_final) && (vector[i] != num_buscado)) {
+        
+        
+        
 
     }
     

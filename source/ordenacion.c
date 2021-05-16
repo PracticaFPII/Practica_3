@@ -45,7 +45,7 @@ int orden_seleccion(int vector[], int n_columnas)
                 }
                 i++;
             }
-            intercambio( &(vector[index_min]), &(vector[j]) );
+            intercambio( &(vector[index_min]), &(vector[j]) ); /* Intercambia el valor mas pequeño por el siguiente no ordenado */
             contador++;
             j++;
         }
