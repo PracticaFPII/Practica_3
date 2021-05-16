@@ -33,6 +33,10 @@ int orden_seleccion(int vector[], int n_columnas)
 {
     int i, contador = 0;
 
+    if(n_columnas > 1) //
+    {
+
+    }
 
 }
 
