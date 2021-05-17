@@ -54,5 +54,5 @@ void test_ordenacion(int vector[], int *n_columnas)
 }
 
 void test_caso_mejor(int vector[], int *n_columnas){
-
+    ...
 }
