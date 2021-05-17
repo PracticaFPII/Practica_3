@@ -24,7 +24,7 @@ int aleatorio_entre (int min, int max) /* Es una función que escoge un numero a
 void crear_vector(int vector[], int *n_columnas) {
 
     do{
-        printf("Indica el largo de la tabla (tiene que ser entre 1 y 100000): ");
+        printf(" Indica el largo de la tabla (tiene que ser entre 1 y 100000): ");
         scanf("%d", n_columnas);
     } while(n_columnas <= 0 && n_columnas > MAX_TABLA);
     
@@ -46,7 +46,7 @@ void ver_vector(int vector[], int n_columnas) {
     
     if (n_columnas < MAX_MOSTRAR) {
         while (i < n_columnas) {
-            printf("[%d] - %d\n", i, vector[i]);
+            printf(" [%d] - %d\n", i, vector[i]);
             i++;
         }
     }

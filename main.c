@@ -31,6 +31,7 @@ int main()
             printf(" [3] - Ordenar por insercion\n");
             printf(" [4] - Busqueda dicotomica\n");
 			printf(" [5] - Medir coste de los procesos de ordenacion\n");
+			printf(" [6] - Realizar pruebas busqueda dicotomica\n");
 			printf(" [0] - Salir\n\n");
 
 			printf (" Escribe tu eleccion (el numero entre corchetes): ");
@@ -83,7 +84,7 @@ int main()
 			
 			case 4: /** Ver contenido del vector **/
 				crear_vector(vector, &num_columnas);
-				ordenar_seleccion(vector, num_columnas);
+				ordenar_...(vector, num_columnas);
 
 				busqueda_dicotomica(vector, num_columnas);
 
@@ -92,8 +93,14 @@ int main()
                 printf("\n ------------------------------------\n");
 				break;
 			
-			case 5: 
+			case 5: /** Prueba sistemas de ordenacion **/
 				test_ordenacion(vector, &num_columnas);
+				test_...();
+                printf("\n ------------------------------------\n");
+				break;
+			
+			case 6: /** Prueba busqueda dicotomica **/
+				test_busqueda(vector, &num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 		}

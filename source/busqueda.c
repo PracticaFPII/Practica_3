@@ -6,7 +6,7 @@
 
 /** BUSQUEDA DICOTOMICA **/
 void busqueda_dicotomica (int vector[], int n_columnas) {
-    int num_buscado,posicion;
+    int num_buscado, posicion;
     bool salir;
 
     do { // Bucle en caso de no encontrar el numero
