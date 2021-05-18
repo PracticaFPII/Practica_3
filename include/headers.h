@@ -22,8 +22,10 @@ int orden_burbuja(int vector[], int n_columnas); // parte 1
 int orden_insercion(int vector[], int n_columnas); // parte 1
 
 
-void test_ordenacion(int vector[], int *n_columnas); // Realizamos un representacion del coste algoritmico en funcion del tamaño del vector
+void test_ordenacion(int vector[], int *n_columnas); // Mostramos el coste algoritmico en funcion del tamaño del vector aleatorio
+void test_caso_mejor(int vector[], int *n_columnas); // Mostramos el coste algoritmico en funcion del tamaño del vector ordenado
+void test_busqueda(int vector[], int *n_columnas); // Mostramos los experimentos realizados a test_busqueda
 
 
 void busqueda_dicotomica(int vector[], int n_columnas); // parte 2
-int busqueda_ite (int vector[], int n_columnas); //parte 2
+int busqueda_ite(int vector[], int n_columnas, int num_buscado); //parte 2

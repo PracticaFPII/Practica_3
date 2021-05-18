@@ -19,6 +19,8 @@ int main()
 	bool salir = false; /* Booleano para salir del programa principal, y repetir el menu */
 	int vector[MAX_TABLA], num_columnas, contador; /* Tabla cargada con la que se trabaja */
 
+	srand((unsigned int)time(NULL)); // Iniciamos la semilla para generar numeros aleatorios
+
 	/* Bucle del Menu y los procedimientos */
 	while (!salir)
 	{
@@ -56,7 +58,7 @@ int main()
                 contador = orden_seleccion(vector, num_columnas);
 
 				ver_vector(vector, num_columnas);
-				printf(" Se han realizado %d intercambios\n", num_columnas);
+				printf(" Se han realizado %d intercambios\n", contador);
                 printf("\n ------------------------------------\n");
 				break;
 			
@@ -67,7 +69,7 @@ int main()
                 contador = orden_burbuja(vector, num_columnas);
 
 				ver_vector(vector, num_columnas);
-				printf(" Se han realizado %d intercambios\n", num_columnas);
+				printf(" Se han realizado %d intercambios\n", contador);
                 printf("\n ------------------------------------\n");
 				break;
 			
@@ -78,24 +80,22 @@ int main()
 				contador = orden_insercion(vector, num_columnas);
 
 				ver_vector(vector, num_columnas);
-				printf(" Se han realizado %d intercambios\n", num_columnas);
+				printf(" Se han realizado %d intercambios\n", contador);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 4: /** Ver contenido del vector **/
 				crear_vector(vector, &num_columnas);
-				ordenar_...(vector, num_columnas);
+				orden_seleccion(vector, num_columnas);
 
 				busqueda_dicotomica(vector, num_columnas);
 
-				ver_vector(vector, num_columnas);
-				printf(" Se han realizado %d intercambios\n", num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 			
 			case 5: /** Prueba sistemas de ordenacion **/
 				test_ordenacion(vector, &num_columnas);
-				test_...();
+				test_caso_mejor(vector, &num_columnas);
                 printf("\n ------------------------------------\n");
 				break;
 			
