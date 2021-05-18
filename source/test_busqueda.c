@@ -66,7 +66,6 @@ void test_busqueda(int vector[], int *n_columnas)
 
     /* mostramos los resultados*/
     printf(" Se han realizado %d pruebas correctamente de %d hechas \n\n", num_tests_ok, num_tests);
-    printf(" Veces que se han encontrado numeros en el vector:");
 
 }
 

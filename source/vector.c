@@ -47,6 +47,6 @@ void ver_vector(int vector[], int n_columnas) {
             printf(" [%d] - %d\n", i, vector[i]);
             i++;
         }
-    }
-    printf("\n");
+        printf("\n");
+    }  
 }

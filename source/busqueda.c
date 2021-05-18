@@ -47,23 +47,21 @@ int busqueda_ite (int vector[], int n_columnas, int num_buscado) {
     i = (n_columnas-1)/2; // Buscar el medio
 
     while ((pos_inicial < pos_final) && (!salir)) { // Bucle para recorrer en busca del numero pasado por parametro
+        
+        if (vector[i] < num_buscado) {
+            pos_inicial = i+1;
 
-        if (num_buscado == vector[i]) { // En caso de encontrar
-
+        } else if (num_buscado == vector[i]) { // En caso de ser mayor
+            
             posicion = i;
-
             salir = true;
-        } else if (num_buscado != vector[i]) {
 
-            if (vector[i] < num_buscado) { // En caso de ser menor
-                pos_inicial = i+1;
-            } else { // En caso de ser superior
-                pos_final = i-1;
-            }
-
-            i = (pos_inicial + pos_final)/2; // Calcular el medio
+        } else { // En caso de ser menor
+            pos_final = i-1;
         }
+
+        i = (pos_inicial + pos_final)/2; // Calcular el medio
     }
 
-    return posicion;
+    return posicion; // Retorna la posición del numero a buscar en el vector, en caso de no ser encontrado retorna un "-1"
 }
