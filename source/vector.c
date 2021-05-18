@@ -18,13 +18,13 @@ aquest valor perquè farem proves amb vectors petits i grans.
 /* CREAMOS EL VECTOR */
 int aleatorio_entre (int min, int max) /* Es una función que escoge un numero aleatorio de entre un minimo y maximo*/
 {
-    return (min + (rand()%(max-min+1))); 
+    return (min + (rand()%(max-min+1)));
 }
 
 void crear_vector(int vector[], int *n_columnas) {
 
     do{
-        printf(" Indica el largo de la tabla (tiene que ser entre 1 y 100000): ");
+        printf(" Indica el largo de la tabla (tiene que ser entre 1 y 100 000): ");
         scanf("%d", n_columnas);
     } while(n_columnas <= 0 && n_columnas > MAX_TABLA);
     

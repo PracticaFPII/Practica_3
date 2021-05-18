@@ -59,7 +59,7 @@ int busqueda_ite (int vector[], int n_columnas, int num_buscado) {
         posicion = i;
     } else { // En caso de no encontrar el numero retorna "-1"
         posicion = -1;
-    } 
+    }
 
     return posicion;
 }
