@@ -10,7 +10,6 @@
 #define MAX_TABLA 100000 // el tamaño maximo es de 100 000
 
 /** =========================    FUNCIONES   ================================ **/
-int aleatorio_entre (int min, int max); // genera numeros aleatorios entre un minimo y maximo
 void crear_vector(int vector[], int *n_columnas); // CREAR VECTOR
 void ver_vector(int vector[], int n_columnas); // parte 1
 

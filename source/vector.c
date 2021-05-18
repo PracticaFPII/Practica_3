@@ -5,8 +5,6 @@
 /* Incluimos el fichero de las cabezeras de los procedimientos */
 #include "../include/headers.h"
 
-#define //MIN 
-#define //MAX 
 #define MAX_MOSTRAR 100
 
 /*
@@ -15,12 +13,7 @@ recomana que utilitzeu vectors estàtics, amb una mida màxima de 100000 element
 aquest valor perquè farem proves amb vectors petits i grans. 
 */
 
-/* CREAMOS EL VECTOR */
-int aleatorio_entre (int min, int max) /* Es una función que escoge un numero aleatorio de entre un minimo y maximo*/
-{
-    return (min + (rand()%(max-min+1)));
-}
-
+/* CREAR VECTOR */
 void crear_vector(int vector[], int *n_columnas) {
 
     do{
@@ -35,8 +28,13 @@ void vector_aleatorio(int vector[], int *n_columnas){
     srand((unsigned int)time(NULL));
 
     for (int i = 0; i < n_columnas; i++) {
-		vector[i] = aleatorio_entre(MIN, MAX);
+		vector[i] = rand();
     }
+}
+
+void vector_ordenado(int vector[], int *n_columnas){
+    vector_aleatorio(vector, n_columnas);
+    orden_seleccion(vector, *n_columnas);...
 }
 
 

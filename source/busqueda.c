@@ -17,17 +17,17 @@ void busqueda_dicotomica (int vector[], int n_columnas) {
 
         if (posicion == -1) { // En caso de no poder encontrar el numero 
             printf("\n No se ha podido encontrar el numero %d\n", num_buscado);
-            printf(" Desea volver a buscar? [0]No / [1]Si");
-            scanf(" %d", &num_buscado);
-
-            if (num_buscado == 0) { // El usuario desea salir
-                salir = true;
-            }
+            
         } else { // En caso de encontrar el numero
-            printf("\n El numero %d se encuentra en la posicion [%d]\n", num_buscado, posicion);
+            printf("\n El numero %d se encuentra en la posicion [%d] del vector\n", num_buscado, posicion);
+        }
+        
+        printf(" Desea volver a buscar? [0]No / [1]Si");
+        scanf(" %d", &num_buscado);
+
+        if (num_buscado == 0) { // El usuario desea salir
             salir = true;
         }
-
     } while (!salir);
 }
 
@@ -40,26 +40,21 @@ int busqueda_ite (int vector[], int n_columnas, int num_buscado) {
     int posicion;
 
     i = (n_columnas-1)/2; // Buscar el medio
-    
-    if (num_buscado != vector[i]) { // En caso de que el numero de la mitad no sea el buscado
 
-        while ((pos_inicial < pos_final) && (vector[i] != num_buscado)) { // Bucle para recorrer en busca del numero pasado por parametro
+    while ((pos_inicial < pos_final) && (vector[i] != num_buscado)) { // Bucle para recorrer en busca del numero pasado por parametro
 
-            if (vector[i] < num_buscado) {
-                pos_inicial = i+1;
-            } else {
-                pos_final = i-1;
-            }
-
-            i = (pos_inicial + pos_final)/2;
+        if (num_buscado == vector[i]) {
+            posicion = i;
+        } else if (vector[i] < num_buscado) {
+            pos_inicial = i+1;
+        } else {
+            pos_final = i-1;
         }
+
+        i = (pos_inicial + pos_final)/2; // Calcular el medio
     }
 
-    if (num_buscado == vector[i]) {
-        posicion = i;
-    } else { // En caso de no encontrar el numero retorna "-1"
-        posicion = -1;
-    }
+    posicion = i;
 
     return posicion;
 }
