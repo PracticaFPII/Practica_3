@@ -34,7 +34,7 @@ void vector_aleatorio(int vector[], int *n_columnas){
 
 void vector_ordenado(int vector[], int *n_columnas){
     vector_aleatorio(vector, n_columnas);
-    orden_seleccion(vector, *n_columnas);...
+    orden_seleccion(vector, *n_columnas);
 }
 
 

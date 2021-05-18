@@ -24,6 +24,7 @@ void insertar(int vector[], int index_insertado, int index_a_desplazar)
         intercambio(&(vector[n]), &(vector[n-1]));
         n--;
     }
+    vector[index_insertado] = aux;
 }
 
 

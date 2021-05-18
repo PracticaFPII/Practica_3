@@ -24,15 +24,15 @@ void test_ordenacion(int vector[], int *n_columnas)
 
             switch (i){
             case 0:
-                intercambios[i][j] = orden_seleccion(vector, n_columnas); //guardamos resultados en la primera fila
+                intercambios[i][j] = orden_seleccion(vector, *n_columnas); //guardamos resultados en la primera fila
                 break;
             
             case 1:
-                intercambios[i][j] = orden_burbuja(vector, n_columnas); //guardamos resultados en la segunda fila
+                intercambios[i][j] = orden_burbuja(vector, *n_columnas); //guardamos resultados en la segunda fila
                 break;
 
             case 2:
-                intercambios[i][j] = orden_insercion(vector, n_columnas); //guardamos resultados en la tercera fila
+                intercambios[i][j] = orden_insercion(vector, *n_columnas); //guardamos resultados en la tercera fila
                 break;
             }
 
@@ -46,11 +46,11 @@ void test_ordenacion(int vector[], int *n_columnas)
     ver_vector(largo_tabla, N_PRUEBAS);
 
     printf(" Ordenacion por seleccion: \n\n");
-    ver_vector(intercambios, N_PRUEBAS); // mostramos la primera fila
+    ver_vector(&intercambios[0][0], N_PRUEBAS); // mostramos la primera fila
     printf(" Ordenacion por burbuja: \n\n");
-    ver_vector(&(intercambios[N_PRUEBAS]), N_PRUEBAS); // mostramos la segunda fila
+    ver_vector(&(intercambios[1][0]), N_PRUEBAS); // mostramos la segunda fila
     printf(" Ordenacion por insercion: \n\n");
-    ver_vector(&(intercambios[N_PRUEBAS*2]), N_PRUEBAS); // mostramos la tercera fila
+    ver_vector(&(intercambios[2][0]), N_PRUEBAS); // mostramos la tercera fila
 
 }
 
@@ -68,9 +68,9 @@ void test_caso_mejor(int vector[], int *n_columnas){
         *n_columnas = largo_tabla[j];
         vector_ordenado(vector, n_columnas); // generamos vectores ordenados de distinto largo de la tabla
         
-        intercambios[i++][j] = orden_seleccion(vector, n_columnas); //guardamos resultados en la primera fila
-        intercambios[i++][j] = orden_burbuja(vector, n_columnas);   //guardamos resultados en la segunda fila
-        intercambios[i++][j] = orden_insercion(vector, n_columnas); //guardamos resultados en la tercera fila
+        intercambios[i++][j] = orden_seleccion(vector, *n_columnas); //guardamos resultados en la primera fila
+        intercambios[i++][j] = orden_burbuja(vector, *n_columnas);   //guardamos resultados en la segunda fila
+        intercambios[i++][j] = orden_insercion(vector, *n_columnas); //guardamos resultados en la tercera fila
 
         j++;
     }

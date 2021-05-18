@@ -12,6 +12,8 @@
 /** =========================    FUNCIONES   ================================ **/
 void crear_vector(int vector[], int *n_columnas); // CREAR VECTOR
 void ver_vector(int vector[], int n_columnas); // parte 1
+void vector_aleatorio(int vector[], int *n_columnas);
+void vector_ordenado(int vector[], int *n_columnas);
 
 
 void intercambio(int *a, int *b); // Usada para intercambiar el contenido de dos variables (o posicion en vector) de enteros
