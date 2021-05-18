@@ -1,12 +1,13 @@
-#include <stdio.h> 
-#include <stdbool.h> 
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
 /* Incluimos el fichero de las cabezeras de los procedimientos */
 #include "../include/headers.h"
 
 #define N_PRUEBAS_BUSQ 7 // MODIFICAR PRUEBAS AQUI
 #define INDEX_CONOCIDOS 6 // MODIFICAR NUMERO DE INDICES
-#define N_PRUEBAS_DESCONOCIDO 10 // Numeros que se buscan en la tabla 
+#define N_PRUEBAS_DESCONOCIDO 10 // Numeros que se buscan en la tabla
 
 void test_busqueda(int vector[], int *n_columnas)
 {
@@ -16,10 +17,10 @@ void test_busqueda(int vector[], int *n_columnas)
     int num_tests, num_tests_ok, contador;
 
     // tabla donde se guarda las posiciones
-    int posiciones_conocido[N_PRUEBAS_BUSQ][INDEX_CONOCIDOS]; 
+    int posiciones_conocido[N_PRUEBAS_BUSQ][INDEX_CONOCIDOS];
     int posiciones_desconocido[N_PRUEBAS_BUSQ][N_PRUEBAS_DESCONOCIDO];
 
-    
+
     int conocido[N_PRUEBAS_BUSQ][INDEX_CONOCIDOS] = {
         { 0,  2,   3,   5,    7,   9},  // fila para 10
         { 1, 10,   7,  15,   33,  47},  // fila para 50
@@ -29,7 +30,7 @@ void test_busqueda(int vector[], int *n_columnas)
         {20, 50, 780, 900, 1005, 4999},  // fila para 5000
         {39, 60,  67,  70, 4000, 9999},  // fila para 10000
         };
-    
+
 
     /* Realizamos las pruebas */
     while(i < N_PRUEBAS_BUSQ){
@@ -41,7 +42,7 @@ void test_busqueda(int vector[], int *n_columnas)
             buscado = vector[conocido[i][j]];   // Se guarda el valor del indice conocido
             posiciones_conocido[i][j] = busqueda_ite(vector, *n_columnas, buscado); // se pasa el numero a buscar
 
-            if (conocido[i][j] = posiciones_conocido[i][j]){ // Si la posicion buscada coincide con la conocida aumenta test_ok
+            if (conocido[i][j] == posiciones_conocido[i][j]){ // Si la posicion buscada coincide con la conocida aumenta test_ok
                 num_tests_ok++;
                 contador++;
             }
@@ -52,7 +53,7 @@ void test_busqueda(int vector[], int *n_columnas)
         while(j < N_PRUEBAS_DESCONOCIDO){
             buscado = rand();
             posiciones_desconocido[i][j] = busqueda_ite(vector, *n_columnas, buscado);
-            
+
             if (posiciones_desconocido >= 0){
                 contador++;
             }
@@ -60,9 +61,9 @@ void test_busqueda(int vector[], int *n_columnas)
 
         i++;
     }
-    
-    
-    
+
+
+
     /* mostramos los resultados*/
     printf(" Se han realizado %d pruebas correctamente de %d hechas \n\n", num_tests_ok, num_tests);
     printf(" Veces que se han encontrado numeros en el vector:");

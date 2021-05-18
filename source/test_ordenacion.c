@@ -1,5 +1,6 @@
-#include <stdio.h> 
-#include <stdbool.h> 
+#include <stdio.h>
+#include <stdbool.h>
+
 
 /* Incluimos el fichero de las cabezeras de los procedimientos */
 #include "../include/headers.h"
@@ -26,7 +27,7 @@ void test_ordenacion(int vector[], int *n_columnas)
             case 0:
                 intercambios[i][j] = orden_seleccion(vector, *n_columnas); //guardamos resultados en la primera fila
                 break;
-            
+
             case 1:
                 intercambios[i][j] = orden_burbuja(vector, *n_columnas); //guardamos resultados en la segunda fila
                 break;
@@ -67,11 +68,21 @@ void test_caso_mejor(int vector[], int *n_columnas){
 
         *n_columnas = largo_tabla[j];
         vector_ordenado(vector, n_columnas); // generamos vectores ordenados de distinto largo de la tabla
-        
+
         intercambios[i++][j] = orden_seleccion(vector, *n_columnas); //guardamos resultados en la primera fila
         intercambios[i++][j] = orden_burbuja(vector, *n_columnas);   //guardamos resultados en la segunda fila
         intercambios[i++][j] = orden_insercion(vector, *n_columnas); //guardamos resultados en la tercera fila
 
         j++;
     }
+
+    printf(" Se han hecho las siguientes pruebas para los 3 sistemas de ordenacion: \n\n");
+    ver_vector(largo_tabla, N_PRUEBAS_IDEAL);
+
+    printf(" Ordenacion por seleccion: \n\n");
+    ver_vector(&intercambios[0][0], N_PRUEBAS_IDEAL); // mostramos la primera fila
+    printf(" Ordenacion por burbuja: \n\n");
+    ver_vector(&(intercambios[1][0]), N_PRUEBAS_IDEAL); // mostramos la segunda fila
+    printf(" Ordenacion por insercion: \n\n");
+    ver_vector(&(intercambios[2][0]), N_PRUEBAS_IDEAL); // mostramos la tercera fila
 }
