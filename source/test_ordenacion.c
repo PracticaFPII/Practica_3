@@ -43,7 +43,7 @@ void test_ordenacion(int vector[], int *n_columnas)
     }
 
     /* mostramos los resultados*/
-    printf(" Se han hecho las siguientes pruebas para los 3 sistemas de ordenacion: \n\n");
+    printf(" Se han hecho las siguientes pruebas: \n\n");
     ver_vector(largo_tabla, N_PRUEBAS);
 
     printf(" Ordenacion por seleccion: \n\n");
@@ -76,7 +76,7 @@ void test_caso_mejor(int vector[], int *n_columnas){
         j++;
     }
 
-    printf(" Se han hecho las siguientes pruebas para los 3 sistemas de ordenacion: \n\n");
+    printf("\n Se han hecho las siguientes pruebas para los casos ideales: \n\n");
     ver_vector(largo_tabla, N_PRUEBAS_IDEAL);
 
     printf(" Ordenacion por seleccion: \n\n");

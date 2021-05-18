@@ -14,7 +14,7 @@ void test_busqueda(int vector[], int *n_columnas)
     // Largo del vector que se prueba, hay N_PRUEBAS_BUSQ
     int largo_tabla[] = {10, 50, 100, 1000, 2500, 5000, 10000}; // MODIFICAR PRUEBAS AQUI Y EN N_PRUEBAS_BUSQ
     int i = 0, j, buscado;  // i para las filas, j para las columnas de intercambios[i][j]
-    int num_tests, num_tests_ok, contador;
+    int num_tests=0, num_tests_ok=0, contador=0;
 
     // tabla donde se guarda las posiciones
     int posiciones_conocido[N_PRUEBAS_BUSQ][INDEX_CONOCIDOS];
@@ -22,8 +22,8 @@ void test_busqueda(int vector[], int *n_columnas)
 
 
     int conocido[N_PRUEBAS_BUSQ][INDEX_CONOCIDOS] = {
-        { 0,  2,   3,   5,    7,   9},  // fila para 10
-        { 1, 10,   7,  15,   33,  47},  // fila para 50
+        { 0,  2,   3,   5,    7,    9},  // fila para 10
+        { 1, 10,   7,  15,   33,   47},  // fila para 50
         { 2, 20,  25,  45,   56,   99},  // fila para 100
         { 3, 30,  35, 303,  500,  999},  // fila para 1000
         { 5, 40, 105, 300, 1000, 2499},  // fila para 2500

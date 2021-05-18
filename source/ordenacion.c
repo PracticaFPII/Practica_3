@@ -32,23 +32,22 @@ int orden_seleccion(int vector[], int n_columnas)
 {
     int i, j=0, index_min, contador = 0;
 
-    if(n_columnas > 1) // Cunado solo hay un valor, la tabla ya esta ordenada
+    while(j < n_columnas-1) /* Se va avanzando en la tabla ya ordenada */
     {
-        while(j < n_columnas) /* Se va avanzando en la tabla ya ordenada */
+        i = j;
+        index_min = i;
+        while (i < n_columnas) /* Se va avanzando en la tabla NO ordenada */
         {
-            i = j;
-            while (i < n_columnas) /* Se va avanzando en la tabla NO ordenada */
+            if (vector[i] < vector[index_min]) /* Comprueba que valor es mas pequeño */
             {
-                if (vector[i] < vector[index_min]) /* Comprueba que valor es mas pequeño */
-                {
-                    index_min = i; /* Guarda la posicion del nuevo valor mas pequeño */
-                }
-                i++;
+                index_min = i; /* Guarda la posicion del nuevo valor mas pequeño */
             }
-            intercambio( &(vector[index_min]), &(vector[j]) ); /* Intercambia el valor mas pequeño por el siguiente no ordenado */
-            contador++;
-            j++;
+            i++;
         }
+        intercambio( &(vector[index_min]), &(vector[j]) ); /* Intercambia el valor mas pequeño por el siguiente no ordenado */
+
+        contador++;
+        j++;
     }
     return contador;
 }
