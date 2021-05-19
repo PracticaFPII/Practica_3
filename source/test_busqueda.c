@@ -15,11 +15,11 @@ void test_busqueda(int vector[], int *n_columnas)
     int largo_tabla[] = {10, 50, 100, 1000, 2500, 5000, 10000}; // MODIFICAR PRUEBAS AQUI Y EN N_PRUEBAS_BUSQ
     int i = 0, j, buscado;  // i para las filas, j para las columnas de intercambios[i][j]
     int num_tests=0, num_tests_ok=0, contador_ok=0, contador_tot=0;
-    int cont_conocidos[2][N_PRUEBAS_CONOCIDO] = {0}, cont_desconocidos[2][N_PRUEBAS_CONOCIDO] = {0};
+    int cont_conocidos[N_PRUEBAS_BUSQ] = {0}, cont_desconocidos[N_PRUEBAS_BUSQ] = {0};
 
     // tabla donde se guarda las posiciones
-    int posiciones_conocido[N_PRUEBAS_BUSQ][N_PRUEBAS_CONOCIDO];
-    int posiciones_desconocido[N_PRUEBAS_BUSQ][N_PRUEBAS_DESCONOCIDO];
+    int posiciones_conocido;
+    int posiciones_desconocido;
 
 
     int conocido[N_PRUEBAS_BUSQ][N_PRUEBAS_CONOCIDO] = { // Se selecciona los indices de los valores que se conoceran
@@ -41,43 +41,45 @@ void test_busqueda(int vector[], int *n_columnas)
         j = 0;
         while(j < N_PRUEBAS_CONOCIDO){
             buscado = vector[conocido[i][j]];   // Se guarda el valor del indice conocido
-            posiciones_conocido[i][j] = busqueda_ite(vector, *n_columnas, buscado); // Se pasa el numero a buscar
+            posiciones_conocido = busqueda_ite(vector, *n_columnas, buscado); // Se pasa el numero a buscar
 
-            if (conocido[i][j] == posiciones_conocido[i][j]){ // Si la posicion buscada coincide con la conocida aumenta test_ok
+            if (conocido[i][j] == posiciones_conocido){ // Si la posicion buscada coincide con la conocida aumenta test_ok
                 num_tests_ok++;
-                cont_conocidos[0][i]++; // sumamos las veces de cada largo de la tabla
+                cont_conocidos[i]++; // sumamos las veces de cada largo de la tabla
             }
             num_tests++; // Aumenta el numero de pruebas hechas
-            cont_conocidos[1][i]++;
             j++;
         }
         j = 0;
         while(j < N_PRUEBAS_DESCONOCIDO){
             buscado = rand();
-            posiciones_desconocido[i][j] = busqueda_ite(vector, *n_columnas, buscado);
+            posiciones_desconocido = busqueda_ite(vector, *n_columnas, buscado);
 
             if (posiciones_desconocido >= 0){
                 contador_ok++;
-                cont_desconocidos[0][i]++;
+                cont_desconocidos[i]++;
             }
             contador_tot++;
-            cont_desconocidos[1][i]++;
             j++;
         }
 
         i++;
     }
 
-    /* mostramos los resultados*/
-    printf(" Se han realizado %d pruebas correctamente de %d hechas\n de los valores que se conoce que estan en el vector\n\n", num_tests_ok, num_tests);
-    printf(" Se han realizado %d pruebas correctamente de %d hechas\n de los valores que se desconoce si estan en el vector\n\n", contador_ok, contador_tot);
-    
-    printf(" Se han realizado %d pruebas (valores conocidos) para cada largo de la tabla\n", N_PRUEBAS_CONOCIDO);
+    /* Mostramos los resultados*/
+    printf(" Las diferentes longitudes del vector que se han probado son: \n");
     ver_vector(largo_tabla, N_PRUEBAS_BUSQ);
-    printf("\n Las pruebas correctamente hechas fueron:\n");
-    ver_vector(&cont_conocidos[0][0], N_PRUEBAS_BUSQ);
 
-    
+    printf("\n Se han realizado %d pruebas correctamente de %d hechas\n de los valores que se conoce que estan en el vector\n\n", num_tests_ok, num_tests);
+    printf(" Se han realizado %d pruebas correctamente de %d hechas\n de los valores que se desconoce si estan en el vector\n\n", contador_ok, contador_tot);
+
+    printf("\n Se han realizado %d pruebas (valores conocidos) para cada largo de la tabla\n", N_PRUEBAS_CONOCIDO);
+    printf(" Las pruebas correctamente hechas fueron:\n");
+    ver_vector(cont_conocidos, N_PRUEBAS_BUSQ);
+
+    printf("\n Se han realizado %d pruebas (valores desconocidos) para cada largo de la tabla\n", N_PRUEBAS_DESCONOCIDO);
+    printf(" Las pruebas que se han encontrado en el vector:\n");
+    ver_vector(cont_desconocidos, N_PRUEBAS_BUSQ);
 
 }
 
