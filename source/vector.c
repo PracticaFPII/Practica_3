@@ -6,6 +6,7 @@
 #include "../include/headers.h"
 
 #define MAX_MOSTRAR 100
+#define INTERVAL 10
 
 /*
 Un procediment que creï un vector d’enters de mida N i contingut aleatori. Per simplicitat, es
@@ -33,8 +34,10 @@ void vector_aleatorio(int vector[], int *n_columnas){
 }
 
 void vector_ordenado(int vector[], int *n_columnas){
+    int veces_repetido;
+
     vector_aleatorio(vector, n_columnas);
-    orden_seleccion(vector, *n_columnas);
+    orden_seleccion(vector, *n_columnas, &veces_repetido);
 }
 
 
@@ -50,3 +53,26 @@ void ver_vector(int vector[], int n_columnas) {
         printf("\n");
     }  
 }
+
+/*
+void histograma(int vector[], int n_columnas) {
+
+    int i = 0, max = 0, div, contador_histograma;
+
+    printf("Cuantos intervalos quieres generar?");
+    scanf(" %d", div);
+    
+    contador_histograma = (int*)malloc(div*sizeof(int));
+
+    div = max/div;
+
+    while (vector[i] < n_columnas) {
+
+         
+
+        i++;
+    }
+
+    free (contador_histograma);
+}
+*/

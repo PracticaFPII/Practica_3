@@ -38,14 +38,12 @@ void busqueda_dicotomica (int vector[], int n_columnas) {
 
 /* busqueda_ite: Función para realizar la busqueda dicotomica */
 int busqueda_ite (int vector[], int n_columnas, int num_buscado) {
-    int i; // [][i][]
-    int pos_inicial = 0; // [X][i][]
-    int pos_final = n_columnas-1; // [][i][X]
-    int posicion = NO_ENCONTRADO; // En caso de no encontrar el numero, retorna -1
+    int i;                          // [][i][]
+    int pos_inicial = 0;            // [X][i][]
+    int pos_final = n_columnas-1;   // [][i][X]
+    int posicion = NO_ENCONTRADO;   // En caso de no encontrar el numero, retorna -1
 
     i = (n_columnas-1)/2; // Buscar el medio
-
-    ver_vector(vector, n_columnas);
 
     while ((pos_inicial < pos_final) && (vector[i] != num_buscado)) { // Bucle para recorrer en busca del numero pasado por parametro
 

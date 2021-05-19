@@ -17,11 +17,11 @@ void vector_ordenado(int vector[], int *n_columnas);
 
 
 void intercambio(int *a, int *b); // Usada para intercambiar el contenido de dos variables (o posicion en vector) de enteros
-void insertar(int vector[], int index_insertado, int index_a_desplazar); // Inserta un numero del vector en una posicion menor del vector y desplaza el resto
+int insertar(int vector[], int index_insertado, int index_a_desplazar); // Inserta un numero del vector en una posicion menor del vector y desplaza el resto
 
-int orden_seleccion(int vector[], int n_columnas); //parte 1
-int orden_burbuja(int vector[], int n_columnas); // parte 1
-int orden_insercion(int vector[], int n_columnas); // parte 1
+int orden_seleccion(int vector[], int n_columnas, int *contador_veces); //parte 1
+int orden_burbuja(int vector[], int n_columnas, int *contador_veces); // parte 1
+int orden_insercion(int vector[], int n_columnas, int *contador_veces); // parte 1
 
 
 void test_ordenacion(int vector[], int *n_columnas); // Mostramos el coste algoritmico en funcion del tamaño del vector aleatorio

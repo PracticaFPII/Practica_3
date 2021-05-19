@@ -14,23 +14,26 @@ void intercambio(int *a, int *b){
 }
 
 /** Funcion que inserta un numero del vector en una posicion menor del vector y desplaza el resto **/
-void insertar(int vector[], int index_insertado, int index_a_desplazar)
+int insertar(int vector[], int index_insertado, int index_a_desplazar)
 {
-    int n = index_insertado;
+    int n = index_insertado, contador_cambios = 0;
 
     while (n > index_a_desplazar)
     {
-        intercambio(&(vector[n]), &(vector[n-1]));
+        intercambio(&vector[n], &vector[n-1]);
+        contador_cambios++;
         n--;
     }
+    return contador_cambios;
 }
 
 
 
 /* PROCEDIMIENTO PARA ORDENAR POR SELECCIÓN */
-int orden_seleccion(int vector[], int n_columnas)
+int orden_seleccion(int vector[], int n_columnas, int *contador_veces)
 {
-    int i, j=0, index_min, contador = 0;
+    int i, j=0, index_min, contador_cambios = 0;
+    *contador_veces = 0;
 
     while(j < n_columnas-1) /* Se va avanzando en la tabla ya ordenada */
     {
@@ -43,21 +46,22 @@ int orden_seleccion(int vector[], int n_columnas)
                 index_min = i; /* Guarda la posicion del nuevo valor mas pequeño */
             }
             i++;
+            (*contador_veces)++;
         }
-        intercambio( &(vector[index_min]), &(vector[j]) ); /* Intercambia el valor mas pequeño por el siguiente no ordenado */
-
-        contador++;
+        intercambio( &vector[index_min], &vector[j]); /* Intercambia el valor mas pequeño por el siguiente no ordenado */
+        contador_cambios++;
         j++;
     }
-    return contador;
+    return contador_cambios;
 }
 
 
 
 /* PROCEDIMIENTO PARA ORDENAR POR BURBUJA */
-int orden_burbuja(int vector[], int n_columnas)
+int orden_burbuja(int vector[], int n_columnas, int *contador_veces)
 {
-    int i, contador = 0;
+    int i, contador_cambios = 0;
+    *contador_veces = 0;
 
     while(n_columnas > 1){ // Mientras la tabla no ordenada tenga mas de un elemento
 
@@ -65,24 +69,25 @@ int orden_burbuja(int vector[], int n_columnas)
         i = 0;
         while (i < n_columnas-1){
             if(vector[i] > vector[i+1]){ // Realizamos el intercambio si no estan ordenados los dos contiguos
-                intercambio( &(vector[i]), &(vector[i+1]) );
-                contador++;
+                intercambio( &vector[i], &vector[i+1]);
+                contador_cambios++;
             }
             i++;
+            (*contador_veces)++;
         }
 
         n_columnas--; // Disminuimos las columnas a ordenar
     }
-    return contador;
+    return contador_cambios;
 }
 
 
 
 /* PROCEDIMIENTO PARA ORDENAR POR INSERCIÓN */
-int orden_insercion(int vector[], int n_columnas)
+int orden_insercion(int vector[], int n_columnas, int *contador_veces)
 {
-    int i = 1, n, contador = 0;
-
+    int i = 1, n, contador_cambios = 0;
+    *contador_veces = 0;
 
     while (i < n_columnas){ // Hacemos un recorrido comparando para saber donde insertarlo
 
@@ -92,14 +97,14 @@ int orden_insercion(int vector[], int n_columnas)
             // Comparamos el numero a insertar con las posiciones anteriores
             if( (i == n && vector[i] < vector [0]) || (vector[i] < vector[i-n] && vector[i] > vector[i-n-1]) )
             {
-                insertar(vector, i, i-n);
-                contador++;
+                contador_cambios += insertar(vector, i, i-n);
             }
             n++;
+            (*contador_veces)++;
         }
         i++;
 
     }
-    return contador;
+    return contador_cambios;
 }
 
