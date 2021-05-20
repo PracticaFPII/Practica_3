@@ -16,7 +16,8 @@ void intercambio(unsigned long long *a, unsigned long long *b){
 /** Funcion que inserta un numero del vector en una posicion menor del vector y desplaza el resto **/
 unsigned long long insertar(unsigned long long vector[], int index_insertado, int index_a_desplazar)
 {
-    unsigned long long n = index_insertado, contador_cambios = 0;
+    unsigned long long contador_cambios = 0;
+    int n = index_insertado;
 
     while (n > index_a_desplazar)
     {
@@ -32,7 +33,8 @@ unsigned long long insertar(unsigned long long vector[], int index_insertado, in
 /* PROCEDIMIENTO PARA ORDENAR POR SELECCIÓN */
 unsigned long long orden_seleccion(unsigned long long vector[], int n_columnas, unsigned long long *contador_veces)
 {
-    unsigned long long i, j=0, index_min, contador_cambios = 0;
+    unsigned long long contador_cambios = 0;
+    int i, j=0, index_min;
     *contador_veces = 0;
 
     while(j < n_columnas-1) /* Se va avanzando en la tabla ya ordenada */
@@ -60,20 +62,27 @@ unsigned long long orden_seleccion(unsigned long long vector[], int n_columnas, 
 /* PROCEDIMIENTO PARA ORDENAR POR BURBUJA */
 unsigned long long orden_burbuja(unsigned long long vector[], int n_columnas, unsigned long long *contador_veces)
 {
-    unsigned long long i, contador_cambios = 0;
+    unsigned long long contador_cambios = 0;
+    int i, n_ordenado;
+    bool ordenado = false;
     *contador_veces = 0;
 
-    while(n_columnas > 1){ // Mientras la tabla no ordenada tenga mas de un elemento
+    while(n_columnas > 1 && !ordenado){ // Mientras la tabla no ordenada tenga mas de un elemento
 
         /* Realizamos una iteracion para ordenar*/
         i = 0;
+        n_ordenado=0;
         while (i < n_columnas-1){
             if(vector[i] > vector[i+1]){ // Realizamos el intercambio si no estan ordenados los dos contiguos
                 intercambio( &vector[i], &vector[i+1]);
                 contador_cambios++;
             }
+            else{n_ordenado++;}
             i++;
             (*contador_veces)++;
+        }
+        if (n_ordenado == n_columnas-1){
+            ordenado = true;
         }
 
         n_columnas--; // Disminuimos las columnas a ordenar
@@ -86,7 +95,8 @@ unsigned long long orden_burbuja(unsigned long long vector[], int n_columnas, un
 /* PROCEDIMIENTO PARA ORDENAR POR INSERCIÓN */
 unsigned long long orden_insercion(unsigned long long vector[], int n_columnas, unsigned long long *contador_veces)
 {
-    unsigned long long i = 1, n, contador_cambios = 0;
+    unsigned long long contador_cambios = 0;
+    int i = 1, n;
     *contador_veces = 0;
 
     while (i < n_columnas){ // Hacemos un recorrido comparando para saber donde insertarlo
