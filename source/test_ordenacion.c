@@ -8,13 +8,13 @@
 #define N_PRUEBAS 11 // MODIFICAR PRUEBAS AQUI
 #define N_PRUEBAS_IDEAL 11 // MODIFICAR PRUEBAS AQUI
 
-void test_ordenacion(int vector[], int *n_columnas)
+void test_ordenacion(unsigned long long vector[], int *n_columnas)
 {
     // Largo del vector que se prueba, hay N_PRUEBAS
-    int largo_tabla[] = {1, 10, 50, 100, 1000, 2500, 5000, 10000, 25000, 50000, 100000}; // MODIFICAR PRUEBAS AQUI Y EN N_PRUEBAS
-    int intercambios[3][N_PRUEBAS]; // tabla donde se guarda los contadores de los sistemas de ordenacion
+    unsigned long long largo_tabla[] = {1, 10, 50, 100, 1000, 2500, 5000, 10000, 25000, 50000, 100000}; // MODIFICAR PRUEBAS AQUI Y EN N_PRUEBAS
+    unsigned long long intercambios[3][N_PRUEBAS]; // tabla donde se guarda los contadores de los sistemas de ordenacion
     int i = 0, j; // i para las filas, j para las columnas de intercambios[i][j]
-    int veces_repetido[3][N_PRUEBAS];
+    unsigned long long veces_repetido[3][N_PRUEBAS];
 
     /* Realizamos las pruebas */
     while(i < 3)
@@ -24,7 +24,7 @@ void test_ordenacion(int vector[], int *n_columnas)
         while(j < N_PRUEBAS){
             *n_columnas = largo_tabla[j];
             vector_aleatorio(vector, n_columnas); // generamos vectores aleatorios de distinto largo de la tabla
-            
+
 
             switch (i){
             case 0:
@@ -69,10 +69,10 @@ void test_ordenacion(int vector[], int *n_columnas)
 
 }
 
-void test_caso_mejor(int vector[], int *n_columnas){
+void test_caso_mejor(unsigned long long vector[], int *n_columnas){
     // Largo del vector que se prueba, hay N_PRUEBAS_IDEAL
-    int largo_tabla[] = {1, 10, 50, 100, 1000, 2500, 5000, 10000, 25000, 50000, 100000}; // MODIFICAR PRUEBAS AQUI Y EN N_PRUEBAS_IDEAL
-    int intercambios[3][N_PRUEBAS_IDEAL], veces_repetido[3][N_PRUEBAS_IDEAL]; // tabla donde se guarda los contadores de los sistemas de ordenacion
+    unsigned long long largo_tabla[] = {1, 10, 50, 100, 1000, 2500, 5000, 10000, 25000, 50000, 100000}; // MODIFICAR PRUEBAS AQUI Y EN N_PRUEBAS_IDEAL
+    unsigned long long intercambios[3][N_PRUEBAS_IDEAL], veces_repetido[3][N_PRUEBAS_IDEAL]; // tabla donde se guarda los contadores de los sistemas de ordenacion
     int j = 0; // j para las columnas de intercambios[i][j]
 
     /* Realizamos las pruebas */

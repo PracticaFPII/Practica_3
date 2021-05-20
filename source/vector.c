@@ -15,7 +15,7 @@ aquest valor perquè farem proves amb vectors petits i grans.
 */
 
 /* CREAR VECTOR */
-void crear_vector(int vector[], int *n_columnas) {
+void crear_vector(unsigned long long vector[], int *n_columnas) {
 
     do{
         printf(" Indica el largo de la tabla (tiene que ser entre 1 y 100000): ");
@@ -26,15 +26,15 @@ void crear_vector(int vector[], int *n_columnas) {
 }
 
 
-void vector_aleatorio(int vector[], int *n_columnas){
+void vector_aleatorio(unsigned long long vector[], int *n_columnas){
 
     for (int i = 0; i < *n_columnas; i++) {
 		vector[i] = rand();
     }
 }
 
-void vector_ordenado(int vector[], int *n_columnas){
-    int veces_repetido;
+void vector_ordenado(unsigned long long vector[], int *n_columnas){
+    unsigned long long veces_repetido;
 
     vector_aleatorio(vector, n_columnas);
     orden_seleccion(vector, *n_columnas, &veces_repetido);
@@ -42,33 +42,33 @@ void vector_ordenado(int vector[], int *n_columnas){
 
 
 /* Mostrar el vector */
-void ver_vector(int vector[], int n_columnas) {
+void ver_vector(unsigned long long vector[], int n_columnas) {
     int i = 0;
 
     if (n_columnas < MAX_MOSTRAR) {
         while (i < n_columnas) {
-            printf(" [%d] - %d\n", i, vector[i]);
+            printf(" [%d] - %llu\n", i, vector[i]);
             i++;
         }
         printf("\n");
-    }  
+    }
 }
 
 /*
-void histograma(int vector[], int n_columnas) {
+void histograma(unsigned long long vector[], int n_columnas) {
 
     int i = 0, max = 0, div, contador_histograma;
 
     printf("Cuantos intervalos quieres generar?");
     scanf(" %d", div);
-    
+
     contador_histograma = (int*)malloc(div*sizeof(int));
 
     div = max/div;
 
     while (vector[i] < n_columnas) {
 
-         
+
 
         i++;
     }

@@ -7,7 +7,7 @@
 #define NO_ENCONTRADO -1
 
 /** BUSQUEDA DICOTOMICA **/
-void busqueda_dicotomica (int vector[], int n_columnas) {
+void busqueda_dicotomica (unsigned long long vector[], int n_columnas) {
     int num_buscado, posicion;
     bool salir;
 
@@ -37,7 +37,7 @@ void busqueda_dicotomica (int vector[], int n_columnas) {
 
 
 /* busqueda_ite: Función para realizar la busqueda dicotomica */
-int busqueda_ite (int vector[], int n_columnas, int num_buscado) {
+int busqueda_ite (unsigned long long vector[], int n_columnas, int num_buscado) {
     int i;                          // [][i][]
     int pos_inicial = 0;            // [X][i][]
     int pos_final = n_columnas-1;   // [][i][X]

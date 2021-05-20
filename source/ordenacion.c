@@ -5,8 +5,8 @@
 #include "../include/headers.h"
 
 /**  Función que intercambia dos posiciones de la tabla **/
-void intercambio(int *a, int *b){
-    int aux;
+void intercambio(unsigned long long *a, unsigned long long *b){
+    unsigned long long aux;
 
     aux = *a;
     *a = *b;
@@ -14,9 +14,9 @@ void intercambio(int *a, int *b){
 }
 
 /** Funcion que inserta un numero del vector en una posicion menor del vector y desplaza el resto **/
-int insertar(int vector[], int index_insertado, int index_a_desplazar)
+unsigned long long insertar(unsigned long long vector[], int index_insertado, int index_a_desplazar)
 {
-    int n = index_insertado, contador_cambios = 0;
+    unsigned long long n = index_insertado, contador_cambios = 0;
 
     while (n > index_a_desplazar)
     {
@@ -30,9 +30,9 @@ int insertar(int vector[], int index_insertado, int index_a_desplazar)
 
 
 /* PROCEDIMIENTO PARA ORDENAR POR SELECCIÓN */
-int orden_seleccion(int vector[], int n_columnas, int *contador_veces)
+unsigned long long orden_seleccion(unsigned long long vector[], int n_columnas, unsigned long long *contador_veces)
 {
-    int i, j=0, index_min, contador_cambios = 0;
+    unsigned long long i, j=0, index_min, contador_cambios = 0;
     *contador_veces = 0;
 
     while(j < n_columnas-1) /* Se va avanzando en la tabla ya ordenada */
@@ -58,9 +58,9 @@ int orden_seleccion(int vector[], int n_columnas, int *contador_veces)
 
 
 /* PROCEDIMIENTO PARA ORDENAR POR BURBUJA */
-int orden_burbuja(int vector[], int n_columnas, int *contador_veces)
+unsigned long long orden_burbuja(unsigned long long vector[], int n_columnas, unsigned long long *contador_veces)
 {
-    int i, contador_cambios = 0;
+    unsigned long long i, contador_cambios = 0;
     *contador_veces = 0;
 
     while(n_columnas > 1){ // Mientras la tabla no ordenada tenga mas de un elemento
@@ -84,9 +84,9 @@ int orden_burbuja(int vector[], int n_columnas, int *contador_veces)
 
 
 /* PROCEDIMIENTO PARA ORDENAR POR INSERCIÓN */
-int orden_insercion(int vector[], int n_columnas, int *contador_veces)
+unsigned long long orden_insercion(unsigned long long vector[], int n_columnas, unsigned long long *contador_veces)
 {
-    int i = 1, n, contador_cambios = 0;
+    unsigned long long i = 1, n, contador_cambios = 0;
     *contador_veces = 0;
 
     while (i < n_columnas){ // Hacemos un recorrido comparando para saber donde insertarlo

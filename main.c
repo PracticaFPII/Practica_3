@@ -17,9 +17,9 @@
 int main()
 {
 	/* Declaracion de variables */
-	int opcion = 0;
+	int opcion = 0, num_columnas;
 	bool salir = false; /* Booleano para salir del programa principal, y repetir el menu */
-	int vector[MAX_TABLA], num_columnas, contador_cambios, veces_repetido; /* Tabla cargada con la que se trabaja */
+	unsigned long long vector[MAX_TABLA], contador_cambios, veces_repetido; /* Tabla cargada con la que se trabaja */
 
 	srand(time(NULL)); // Iniciamos la semilla para generar numeros aleatorios
 
@@ -60,7 +60,7 @@ int main()
                 contador_cambios = orden_seleccion(vector, num_columnas, &veces_repetido);
 
 				ver_vector(vector, num_columnas);
-				printf(" Se han realizado %d intercambios\n", contador_cambios);
+				printf(" Se han realizado %llu intercambios y %llu bucles\n", contador_cambios, veces_repetido);
                 printf("\n ------------------------------------\n");
 				break;
 
@@ -71,7 +71,7 @@ int main()
                 contador_cambios = orden_burbuja(vector, num_columnas, &veces_repetido);
 
 				ver_vector(vector, num_columnas);
-				printf(" Se han realizado %d intercambios\n", contador_cambios);
+				printf(" Se han realizado %llu intercambios y %llu  bucles\n", contador_cambios, veces_repetido);
                 printf("\n ------------------------------------\n");
 				break;
 
@@ -82,7 +82,7 @@ int main()
 				contador_cambios = orden_insercion(vector, num_columnas, &veces_repetido);
 
 				ver_vector(vector, num_columnas);
-				printf(" Se han realizado %d intercambios\n", contador_cambios);
+				printf(" Se han realizado %llu intercambios y %llu  bucles\n", contador_cambios, veces_repetido);
                 printf("\n ------------------------------------\n");
 				break;
 
